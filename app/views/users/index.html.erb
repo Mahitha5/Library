@@ -1,1 +1,29 @@
-<a href="/users/new"> Create user </a>
+<span class="create-user">
+  <a href="/users/new"> Create User </a>
+</span>
+<table>
+  <tr>
+    <th>
+      Name
+    </th>
+    <th>
+      Email
+    </th>
+    <th>
+      Address
+    </th>
+  </tr>
+  <% @users.each do |user| %>
+    <tr>
+      <td>
+        <%= user.name %>
+      </td>
+      <td>
+        <%= user.email %>
+      </td>
+      <td>
+        <%= user.address %>
+      </td>
+    </tr>
+  <% end %>
+</table>
