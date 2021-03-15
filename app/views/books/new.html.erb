@@ -1,25 +1,25 @@
 <h1 class="new-book-header"> Add new book details </h1>
 
 <%= form_with model: @book, html: {class: "book-form"} do |form| %>
-  <div class="book-fields">
+  <div class="fields">
     <%= form.label :title %><br>
     <%= form.text_field :title %>
     <% @book.errors.full_messages_for(:title).each do |message| %>
-      <div class="book-errors">
+      <div class="errors">
         <%= message %>
       </div>
     <% end %>
   </div>
-  <div class="book-fields">
+  <div class="fields">
     <%= form.label :author %><br>
     <%= form.text_field :author %>
     <% @book.errors.full_messages_for(:author).each do |message| %>
-      <div class="book-errors">
+      <div class="errors">
         <%= message %>
       </div>
     <% end %>
   </div>
-  <div class="book-fields">
+  <div class="fields">
     <%= form.label :edition %><br>
     <%= form.number_field :edition %>
   </div>

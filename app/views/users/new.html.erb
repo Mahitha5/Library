@@ -1,0 +1,29 @@
+<h1 class="new-user-header"> Add User details </h1>
+
+<%= form_with model: @user, html: {class: "user-form"} do |form| %>
+  <div class="fields">
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+    <% @user.errors.full_messages_for(:name).each do |message| %>
+      <div class="errors">
+        <%= message %>
+      </div>
+    <% end %>
+  </div>
+  <div class="fields">
+    <%= form.label :email %><br>
+    <%= form.email_field :email %>
+    <% @user.errors.full_messages_for(:email).each do |message| %>
+      <div class="errors">
+        <%= message %>
+      </div>
+    <% end %>
+  </div>
+  <div class="fields">
+    <%= form.label :address %><br>
+    <%= form.text_area :address %>
+  </div>
+  <div>
+    <%= form.submit :Save %>
+  </div>
+<% end %>
