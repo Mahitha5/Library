@@ -4,6 +4,9 @@
 <table>
   <tr>
     <th>
+      Id
+    </th>
+    <th>
       Title
     </th>
     <th>
@@ -15,6 +18,9 @@
   </tr>
   <% @books.each do |book| %>
     <tr>
+      <td>
+        <%= book.id %>
+      </td>
       <td>
         <%= book.title %>
       </td>
