@@ -25,3 +25,19 @@ tr:nth-child(even) {
   margin: 30px;
   padding-right: 100px;
 }
+
+form {
+  margin: 0 45%;
+}
+
+.new-book-header {
+  text-align: center;
+}
+
+.book-fields {
+  margin: 10px 0;
+}
+
+.book-errors {
+  color: #B00100;
+}

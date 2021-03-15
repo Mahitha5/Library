@@ -13,7 +13,7 @@ class BooksController < ApplicationController
     if @book.save
       redirect_to "/books"
     else
-      render "/books"
+      render :new
     end
   end
 
