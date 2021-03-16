@@ -1,0 +1,34 @@
+<h1 class="new-book-header"> Check out a book </h1>
+
+<%= form_with model: @borrow, html: {class: "book-form"} do |form| %>
+  <div class="fields">
+    <%= form.label :user_id %><br>
+    <%= form.number_field :user_id %>
+    <% @borrow.errors.full_messages_for(:user_id).each do |message| %>
+      <div class="errors">
+        <%= message %>
+      </div>
+    <% end %>
+  </div>
+  <div class="fields">
+    <%= form.label :book_id %><br>
+    <%= form.number_field :book_id %>
+    <% @borrow.errors.full_messages_for(:book_id).each do |message| %>
+      <div class="errors">
+        <%= message %>
+      </div>
+    <% end %>
+  </div>
+  <div class="fields">
+    <%= form.label :due_date %><br>
+    <%= form.date_field :due_date %>
+    <% @borrow.errors.full_messages_for(:due_date).each do |message| %>
+      <div class="errors">
+        <%= message %>
+      </div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.submit :Save %>
+  </div>
+<% end %>
