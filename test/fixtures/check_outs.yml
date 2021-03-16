@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: MyString
+  book_id: MyString
+  due_date: 2021-03-16
+  user: one
+  book: one
+
+two:
+  user_id: MyString
+  book_id: MyString
+  due_date: 2021-03-16
+  user: two
+  book: two
