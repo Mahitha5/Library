@@ -1,5 +1,6 @@
 class CheckOutsController < ApplicationController
   def index
+    @checkouts = CheckOut.all
   end
 
   def new

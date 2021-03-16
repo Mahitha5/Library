@@ -1,3 +1,35 @@
 <span class="checkout-book">
   <a href="/check-outs/new"> Check Out book </a>
 </span>
+<table>
+  <tr>
+    <th>
+      User Name
+    </th>
+    <th>
+      Book Title
+    </th>
+    <th>
+      Due date
+    </th>
+    <th>
+
+    </th>
+  </tr>
+  <% @checkouts.each do |checkout| %>
+    <tr>
+      <td>
+        <%= checkout.user.name %>
+      </td>
+      <td>
+        <%= checkout.book.title %>
+      </td>
+      <td>
+        <%= checkout.due_date %>
+      </td>
+      <td>
+        Check In
+      </td>
+    </tr>
+  <% end %>
+</table>
