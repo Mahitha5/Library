@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   get "/check-outs", to:"check_outs#index"
   get "/check-outs/new", to:"check_outs#new"
   post "/check-outs", to:"check_outs#create"
+  delete "/check-outs/:id", to:"check_outs#delete", as: :check_out
 end

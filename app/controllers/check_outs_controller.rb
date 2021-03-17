@@ -4,13 +4,10 @@ class CheckOutsController < ApplicationController
   end
 
   def new
-    print "in new"
     @borrow = CheckOut.new
   end
 
   def create
-    print "in create"
-    print checkout_params
     @borrow = CheckOut.create(checkout_params)
 
     if @borrow
@@ -20,10 +17,14 @@ class CheckOutsController < ApplicationController
     end
   end
 
+  def delete
+    @borrowed_book = CheckOut.find_by(params[:id])
+    @borrowed_book.destroy
+    redirect_to "/check-outs"
+  end
+
   private
   def checkout_params
-    print "in params"
-    print params.require(:check_out)
     params.require(:check_out).permit(:user_id, :book_id, :due_date)
   end
 end

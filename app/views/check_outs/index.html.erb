@@ -28,7 +28,7 @@
         <%= checkout.due_date %>
       </td>
       <td>
-        Check In
+        <%= link_to "Check In", check_out_path(checkout.id), method: :delete %>
       </td>
     </tr>
   <% end %>
