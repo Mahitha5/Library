@@ -8,7 +8,7 @@ class CheckOutsController < ApplicationController
   end
 
   def create
-    @borrow = CheckOut.create(checkout_params)
+    @borrow = CheckOut.create!(checkout_params)
 
     if @borrow
       redirect_to "/check-outs"
