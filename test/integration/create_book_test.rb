@@ -13,4 +13,14 @@ class CreateBookTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select "td", "Learn RoR"
   end
+
+  test "Should stay on new page on create fail" do
+    get "/books/new"
+    assert_response :success
+
+    post "/books",
+         params: { book: { title: "", author: "Someone", edition: 1 }}
+    assert_equal 0, Book.count
+    assert_template :new
+  end
 end
