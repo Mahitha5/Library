@@ -3,7 +3,8 @@
 <%= form_with model: @borrow, html: {class: "book-form"} do |form| %>
   <div class="fields">
     <%= form.label :user_id %><br>
-    <%= form.number_field :user_id %>
+    <%#= form.number_field :user_id %>
+    <%= form.collection_select :user_id, User.order(:name), :id, :name, prompt: true %>
     <% @borrow.errors.full_messages_for(:user_id).each do |message| %>
       <div class="errors">
         <%= message %>
@@ -12,7 +13,8 @@
   </div>
   <div class="fields">
     <%= form.label :book_id %><br>
-    <%= form.number_field :book_id %>
+    <%#= form.number_field :book_id %>
+    <%= form.collection_select :book_id, Book.order(:title), :id, :title, prompt: true %>
     <% @borrow.errors.full_messages_for(:book_id).each do |message| %>
       <div class="errors">
         <%= message %>
